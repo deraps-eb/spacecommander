@@ -28,5 +28,5 @@ function all_valid_objc_files_in_repo() {
 	[ -e ".formatting-directory" ] && location_to_diff=$( cat .formatting-directory );
 
 	files=$(git ls-tree --name-only --full-tree -r HEAD -- "$location_to_diff" | grep -e '\.m$' -e '\.mm$' -e '\.h$' -e '\.hh$')
-	echo "$files" | grep -v 'Pods/' | grep -v 'Carthage/' | grep -v 'vender/' >&1
+	echo "$files" | grep -v 'Pods/' | grep -v 'Carthage/' | grep -v 'vendor/' >&1
 }
