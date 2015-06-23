@@ -63,7 +63,7 @@ SpacesInAngles:  false
 SpaceInEmptyParentheses: false
 SpacesInCStyleCastParentheses: false
 SpaceAfterCStyleCast: false
-SpacesInContainerLiterals: true
+SpacesInContainerLiterals: false
 SpaceBeforeAssignmentOperators: true
 
 CommentPragmas:  '^ IWYU pragma:'
