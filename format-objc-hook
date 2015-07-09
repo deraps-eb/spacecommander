@@ -22,7 +22,7 @@ function format_objc() {
 	difference=$("$DIR"/format-objc-file-dry-run.sh "$file" | diff "$file" - | wc -l)
 	
     if [ $difference -gt 0 ]; then
-    	# This is what the dev can run to fixup an individual file
+	success=1
 	echo "Found some formatting errors in $file. Don't worry, I got this."
     fi
   done
@@ -30,6 +30,9 @@ function format_objc() {
 }
 
 success=0
-format_objc || "$DIR/format-objc-files.sh -s"
+format_objc
+if [ $success ]; then
+	$DIR/format-objc-files.sh -s
+fi
 
-exit $success
+exit 0
